@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ToDo App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./assets/css/angular-material.min.css">
+        <link rel="stylesheet" href="./assets/css/app.css">
+
+    </head>
+    <body ng-app = "todoApp">
+<div class="container" ng-controller = "todoAppCtrl">
+    
+            <h1 class="display-2 text-center">To-do List</h1>
+            <div class="row">
+                    <form ng-submit="addTodo()" class="col-8 col-centered mx-auto">
+                            <div class="form-group" >
+                                 <input class="form-control input-lg" type="text" ng-model="todoTitle" placeholder="Enter To-do"/>
+                            </div>
+                        </form>
+            </div>
+            <div class="row">
+                <div class="col-12 col-centered mx-auto m-2">
+                    <button class="btn btn-default" ng-click="hideCompletedTodos($event)" data-sts="0">Hide Completed</button>
+                </div>
+                </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <th>*</th>
+                        <th>Todo Title</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody >
+                        <tr ng-repeat= "item in todos | filter: {filterCompleted:true} track by $index" ng-class="{completed: item.completed}">
+                            <td>
+                                <input id="cb_{{$index}}" name="cb" type="checkbox" ng-model="item.completed" ng-change="completeTodo(item)"/>
+                                <label for="cb_{{$index}}" class="check-box"><span></span></label>
+                            </td>
+                            <td>
+                                    <span id="todoSpan_{{$index}}">{{item.title}}</span>
+                            </td>
+                            <td>
+                            <a ng-click="updateTodo(item, $index)"><i class="fa fa-edit fa-lg"></i></a>
+                            <a ng-click="deleteTodo(item)"><i class="fa fa-trash fa-lg remove"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>	
+                </div>
+</div> 
+        </body>
+    
+        <script src="./assets/js/jquery-3.2.1.slim.min.js"></script>
+        <script src="./assets/js/angular.js"></script>
+        <script src="./assets/js/angular-aria.js"></script>
+        <script src="./assets/js/angular-animate.js"></script>
+        <script src="./assets/js/angular-messages.js"></script>
+        <script src="./assets/js/angular-material.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+        <script src="./ng/app.js"></script>
+    </html>

@@ -1,0 +1,125 @@
+body {
+    background-color:#6491bf;
+    padding: 10%;
+    color: whitesmoke;
+}
+h1 {
+    color: whitesmoke;
+    margin-bottom: 10px;
+}
+span {
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+span:focus {
+    background: whitesmoke;
+    color: rgb(54, 54, 54);
+}
+
+.table th {
+    border: none;
+}
+
+.table td {
+    border-top: none;
+}
+
+.list-group-item {
+    
+    background-color: lightgray;
+    border-radius: 25%;
+}
+
+.list-group-flush .list-group-item {
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+        border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+tr.completed td span {
+	color: #6cf7ab;
+    transition: color 0.2s ease-out;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+
+
+
+/*
+input[type="checkbox"] {
+    display: none;
+}
+*/
+
+input {
+    padding-right: 50%;
+    padding-left: 50%;
+}
+
+input[type=checkbox] + label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    /*padding: 0.2em;*/
+  }
+  
+  input[type=checkbox] {
+    display: none;
+  }
+  
+  input[type=checkbox] + label:before {
+    font-family: FontAwesome;
+    content: "\f00c";
+    font-size: 18px;
+    padding-right: 0.2em;
+    border: 0.1em solid whitesmoke;
+    border-radius: 0.2em;
+    display: inline-block;
+    padding-left: 0.2em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+  }
+  
+  input[type=checkbox] + label:active:before {
+    transform: scale(0);
+  }
+  
+  input[type=checkbox]:checked + label:before {
+    background-color: rgb(33, 226, 120);
+    border-color: rgb(33, 226, 120);;
+    color: #fff;
+  }
+  
+  input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: #aaa;
+  }
+  
+  input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: #bfb;
+    border-color: #bfb;
+  }
+
+  i {
+      font-size: 22px;
+      display: inline-block;
+  }
+
+  i:hover {
+    transition: .2s;
+    font-size: 25px;
+    display: inline-block;
+  }
+
+.btn {
+    background: whitesmoke;
+    color: #707888;
+    font-weight: 600;
+}
